@@ -7,6 +7,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 1,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -17,6 +18,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 2,
     price: 20,
+    size: "10-inch",
     genre: "techno"
   },
   {
@@ -27,6 +29,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 3,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -37,6 +40,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 4,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -47,6 +51,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: "5",
     price: "20",
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -57,6 +62,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 6,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -67,6 +73,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 7,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -77,6 +84,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 8,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -87,6 +95,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 9,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -97,6 +106,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 10,
     price: 20,
+    size: "10-inch",
     genre: "bass"
   },
   {
@@ -107,6 +117,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 11,
     price: 20,
+    size: "12-inch",
     genre: "bass"
   },
   {
@@ -117,6 +128,7 @@ export const popularProducts = [
     description: "ill be thereeee",
     daysinstock: 12,
     price: 20,
+    size: "12-inch",
     genre: "bass"
   },
 ]
