@@ -72,7 +72,7 @@ const Homepage = () => {
                     <FilterOption>World</FilterOption>
                 </FilterSelect>
                 <FilterSelect name= "size" onChange={handleFilters}>
-                    <FilterOption disabled>
+                    <FilterOption disabled selected>
                         Size
                     </FilterOption>
                     <FilterOption>All</FilterOption>
