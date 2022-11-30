@@ -1,6 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import Homepage from './pages/Homepage';
+import Cart from './pages/Cart';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </Router>
+  );
+}
+
+/*
 function App() {
   return (
     <div className="App">
@@ -21,5 +41,7 @@ function App() {
     </div>
   );
 }
+*/
+
 
 export default App;
