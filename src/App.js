@@ -9,11 +9,7 @@ import {
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-      </Routes>
-    </Router>
+    <Homepage/>
   );
 }
 
