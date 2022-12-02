@@ -1,20 +1,11 @@
 import './App.css';
 import React from 'react'
 import Homepage from './pages/Homepage';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
 
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-      </Routes>
-    </Router>
+    <Homepage/>
   );
 }
 
@@ -38,8 +29,8 @@ function App() {
       </header>
     </div>
   );
-}
-*/
+}*/
+
 
 
 export default App;
