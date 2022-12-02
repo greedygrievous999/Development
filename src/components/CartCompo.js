@@ -1,6 +1,4 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 import styled from 'styled-components'
 import { Add } from '@material-ui/icons'
 import { Remove } from '@material-ui/icons'
@@ -12,12 +10,7 @@ const Wrapper = styled.div`
 `
 const Title = styled.h1`
 `
-const Top = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-`
+
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
@@ -44,14 +37,8 @@ const Details = styled.div`
     flex-direction: column;
     justify-content: space-around;
 `
-const ProductName = styled.span``
-const ProductID = styled.span``
-const ProductColor = styled.div`
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: ${props=>props.color};
-`
+const ProductTitle = styled.span``
+const ProductArtist = styled.span``
 const ProductSize = styled.span`` 
 
 const PriceDetail = styled.div`
@@ -70,10 +57,6 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
     font-size: 24px;
     margin: 5px;
-`
-const ProductPrice = styled.div`
-    font-size: 18px;
-    font-weight: 200;
 `
 
 const Hr = styled.hr`
@@ -97,8 +80,8 @@ const SummaryItem = styled.div`
     margin: 30px 0px;
     display: flex;
     justify-content: space-between;
-    font-weight: ${props=>props.type == "total"  && "600"};
-    font-size: ${props=>props.type == "total"  && "24"};
+    font-weight: ${props=>props.type === "total"  && "600"};
+    font-size: ${props=>props.type === "total"  && "24"};
 `
 const SummaryItemText = styled.span``
 const SummaryItemPrice = styled.span``
@@ -110,89 +93,58 @@ const SummaryButton = styled.button`
     font-weight: 600;
 `
 
-const TopButton = styled.button`
-    padding: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    border: ${props=>props.type === "filled" && "none"};
-    background-color: ${props=>props.type === "filled" ? "black" : "transparent"};
-    color: ${props=>props.type === "filled" && "white"};
-`
+const CartCompo = (props) => {
+    const {cartItems, onAdd, onRemove} = props;
+    const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const taxPrice = itemsPrice * 0.14;
+    const shippingPrice =  itemsPrice > 75 ? 0 : 10;
+    const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
-const TopTexts = styled.div``
-
-const TopText = styled.span`
-    text-decoration: underline;
-    cursor: pointer;
-`
-
-const CartCompo = () => {
   return (
     <Container>
         <Wrapper>
             <Title>Your Bag</Title>
-            <Top>
-                <TopButton>Continue Shopping</TopButton>
-                <TopTexts>
-                    <TopText>Cart</TopText>
-                </TopTexts>
-                <TopButton type="filled">Checkout</TopButton>
-            </Top>
             <Bottom>
                 <Info>
-                    <Product>
-                        <ProductDetail>
-                            <Image src="https://assets.boomkat.com/spree/products/773774/large/5056467320347.jpg" />
-                            <Details>
-                                <ProductName><b>Product:</b>THIS RECORD</ProductName>
-                                <ProductID><b>ID:</b>THIS ID</ProductID>
-                                <ProductColor color='black'/>
-                                <ProductSize><b>Size:</b>32</ProductSize>
-                            </Details>
-                        </ProductDetail>
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add/>
-                                <ProductAmount>2</ProductAmount>
-                                <Remove/>
-                            </ProductAmountContainer>
-                            <ProductPrice>$24.99</ProductPrice>
-                        </PriceDetail>
-                    </Product>
-                    <Hr/>
-                    <Product>
-                        <ProductDetail>
-                            <Image src="https://assets.boomkat.com/spree/products/773774/large/5056467320347.jpg" />
-                            <Details>
-                                <ProductName><b>Product:</b>THIS RECORD</ProductName>
-                                <ProductID><b>ID:</b>THIS ID</ProductID>
-                                <ProductColor color='black'/>
-                                <ProductSize><b>Size:</b>32</ProductSize>
-                            </Details>
-                        </ProductDetail>
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add/>
-                                <ProductAmount>2</ProductAmount>
-                                <Remove/>
-                            </ProductAmountContainer>
-                            <ProductPrice>$24.99</ProductPrice>
-                        </PriceDetail>
-                    </Product>
+                    {cartItems.map((item) => (
+                        <div key={item.title}>
+                        <Product>
+                            <ProductDetail>
+                                <Image src={item.img}/>
+                                <Details>
+                                    <ProductTitle><b>Title: </b>{item.title}</ProductTitle>
+                                    <ProductArtist><b>Artist: </b>{item.artist}</ProductArtist>
+                                    <ProductSize><b>Size: </b>{item.size}</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                            <PriceDetail>
+                                <ProductAmountContainer>
+                                    <Add onClick={()=>onAdd(item)}/>
+                                    <ProductAmount>{item.qty} x ${item.price.toFixed(2)}</ProductAmount>
+                                    <Remove onClick={()=>onRemove(item)}/>
+                                </ProductAmountContainer>
+                            </PriceDetail>
+                        </Product>
+                        </div>
+                    ))}
                 </Info>
                 <Summary>
                     <SummaryTitle>ORDER SUMMARY</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice>$80</SummaryItemPrice>
+                        <SummaryItemPrice>${itemsPrice}</SummaryItemPrice>
+                    </SummaryItem>
+                    <SummaryItem>
+                        <SummaryItemText>Tax</SummaryItemText>
+                        <SummaryItemPrice>${taxPrice.toFixed(2)}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Shipping</SummaryItemText>
-                        <SummaryItemPrice>$20</SummaryItemPrice>
+                        <SummaryItemPrice>${shippingPrice}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem type="total">
                         <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice>$100</SummaryItemPrice>
+                        <SummaryItemPrice>${totalPrice}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryButton>CHECKOUT NOW</SummaryButton>
                 </Summary>

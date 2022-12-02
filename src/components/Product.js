@@ -1,10 +1,5 @@
-import { FavoriteBorderOutlined, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
-
-const SuperContainer =  styled.div`
-    align-items: stretch;
-`
 
 const HoverAction = styled.div`
     opacity: 0;
@@ -13,7 +8,7 @@ const HoverAction = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -85,7 +80,7 @@ const Artist = styled.span`
     font-weight: 600;
     font-size: 16px;
 `
-const Label = styled.span`
+const GenreSize = styled.span`
     font-weight: 500;
     font-size: 14px;
 `
@@ -93,24 +88,27 @@ const Desc = styled.span`
     font-weight: 400;
     font-size: 14px;
 `
-const Product = ({item}) => {
+const Product = (props) => {
+
+  const { item, onAdd } = props;
+
     return (
         <ImageContainer>
             <Image src={item.img}/>
             <HoverAction>     
                 <TextInfo>
-                    <Title>{item.title}</Title>
+                    <Title>{item.title.toUpperCase()}</Title>
                 </TextInfo>
                 <TextInfo>
-                    <Artist>{item.artist}</Artist>
+                    <Artist>{item.artist.toUpperCase()}</Artist>
                 </TextInfo>
                 <TextInfo>
-                    <Label>Genre: {item.genre}</Label>
+                    <GenreSize> {item.genre.toUpperCase()} / {item.size.toUpperCase()} </GenreSize>
                 </TextInfo>
                 <TextInfo>
                     <Desc>$ {item.price}</Desc>
                 </TextInfo>
-                <AddtoCartButton>ADD TO CART</AddtoCartButton>
+                <AddtoCartButton onClick={()=>onAdd(item)}>ADD TO CART</AddtoCartButton>
             </HoverAction>
         </ImageContainer>
     )

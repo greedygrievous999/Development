@@ -17,7 +17,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 2,
-    price: 20,
+    price: 10,
     size: "10-inch",
     genre: "techno"
   },
@@ -28,7 +28,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 3,
-    price: 20,
+    price: 15,
     size: "10-inch",
     genre: "bass"
   },
@@ -50,7 +50,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: "5",
-    price: "20",
+    price: 20,
     size: "10-inch",
     genre: "bass"
   },
@@ -61,7 +61,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 6,
-    price: 20,
+    price: 12,
     size: "10-inch",
     genre: "bass"
   },
@@ -72,7 +72,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 7,
-    price: 20,
+    price: 11,
     size: "10-inch",
     genre: "bass"
   },
@@ -105,7 +105,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 10,
-    price: 20,
+    price: 18,
     size: "10-inch",
     genre: "bass"
   },
@@ -116,7 +116,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 11,
-    price: 20,
+    price: 30,
     size: "12-inch",
     genre: "bass"
   },
@@ -127,7 +127,7 @@ export const popularProducts = [
     label: "moving shadow",
     description: "ill be thereeee",
     daysinstock: 12,
-    price: 20,
+    price: 40,
     size: "12-inch",
     genre: "bass"
   },
