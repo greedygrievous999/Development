@@ -1,7 +1,7 @@
 # Development
 
 ### Link to Deployed Website
-If you used the stencil code, this is `https://greedygrievous999.github.io/Development`
+If you used the stencil code, this is `https://<greedygrievous999>.github.io/Development `
 
 ### Goal and Value of the Application
 
