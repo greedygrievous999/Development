@@ -1,8 +1,6 @@
 import { Search, ShoppingCart } from '@material-ui/icons'
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Cart from '../pages/Cart'
 
 const Container = styled.div`
   height: 60px;
@@ -64,13 +62,11 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>BOOMKAT</Logo>
+          <Logo>MOHAWK RECORDS</Logo>
         </Center>
         <Right>
           <MenuItem>Sign In</MenuItem>
-          <Link to="/cart" element={<Cart/>} >
-            <MenuItem><ShoppingCart/></MenuItem>
-          </Link>
+          <MenuItem><ShoppingCart/></MenuItem>
         </Right>
       </Wrapper>
     </Container>

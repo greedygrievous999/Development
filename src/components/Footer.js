@@ -75,13 +75,13 @@ const Footer = () => {
                 SHIPPING
             </Logo>
             <Link>
-                Addressline 1 
+                20 Swan Street 
             </Link>
             <Link>
-                Line 2 
+                Manchester
             </Link>
             <Link>
-                Line 3 
+                M4 5JW
             </Link>
         </Column>
         <Column>
@@ -92,10 +92,10 @@ const Footer = () => {
                 Contact Form 
             </Link>
             <Link>
-                Phone number 
+                1618322565 
             </Link>
             <Link>
-                email
+                help@mohawkrecords.com
             </Link>
         </Column>
     </Container>

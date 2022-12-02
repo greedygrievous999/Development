@@ -70,6 +70,7 @@ const TextInfo = styled.div`
 
     &:hover{
         background-color: lightcoral;
+        transform: scale(1.3);
     }
 `
 const Title = styled.span`

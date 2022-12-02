@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react'
 import Homepage from './pages/Homepage';
-import Cart from './pages/Cart';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,7 +13,6 @@ const App = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );

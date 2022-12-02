@@ -74,7 +74,8 @@ const Summary = styled.div`
 `
 
 const SummaryTitle = styled.h1`
-    font-weight: 200;
+    font-size: 30px;
+    font-weight: 150;
 `
 const SummaryItem = styled.div`
     margin: 30px 0px;
@@ -97,7 +98,7 @@ const CartCompo = (props) => {
     const {cartItems, onAdd, onRemove} = props;
     const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
     const taxPrice = itemsPrice * 0.14;
-    const shippingPrice =  itemsPrice > 75 ? 0 : 10;
+    const shippingPrice =  itemsPrice > 100 ? 0 : 10;
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
   return (
@@ -132,7 +133,7 @@ const CartCompo = (props) => {
                     <SummaryTitle>ORDER SUMMARY</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice>${itemsPrice}</SummaryItemPrice>
+                        <SummaryItemPrice>${itemsPrice.toFixed(2)}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Tax</SummaryItemText>
@@ -144,7 +145,7 @@ const CartCompo = (props) => {
                     </SummaryItem>
                     <SummaryItem type="total">
                         <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice>${totalPrice}</SummaryItemPrice>
+                        <SummaryItemPrice>${totalPrice.toFixed(2)}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryButton>CHECKOUT NOW</SummaryButton>
                 </Summary>

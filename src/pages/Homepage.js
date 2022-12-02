@@ -7,6 +7,16 @@ import CartCompo from '../components/CartCompo';
 import Product from '../components/Product'
 import { popularProducts } from '../data'
 import { useEffect } from 'react';
+import Banner from '../components/Banner';
+
+const MegaContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+`
+
+const FilterandProducts = styled.div`
+`
 
 const FilterContainer = styled.div`
     display: flex;
@@ -104,6 +114,9 @@ const Homepage = () => {
     return (
         <div>
         <Navbar/>
+        <Banner/>
+        <MegaContainer>
+        <FilterandProducts>
         <FilterContainer>
             <SortFiltContainer>
                 <FilterText>
@@ -114,11 +127,13 @@ const Homepage = () => {
                         Genre
                     </FilterOption>
                     <FilterOption>All</FilterOption>
+                    <FilterOption>Ambient</FilterOption>
                     <FilterOption>Bass</FilterOption>
-                    <FilterOption>Techno</FilterOption>
-                    <FilterOption>Punk</FilterOption>
                     <FilterOption>HipHop</FilterOption>
+                    <FilterOption>Punk</FilterOption>
+                    <FilterOption>Techno</FilterOption>
                     <FilterOption>World</FilterOption>
+                    
                 </FilterSelect>
                 <FilterSelect name= "size" onChange={handleSizeFilter}>
                     <FilterOption disabled selected>
@@ -145,7 +160,9 @@ const Homepage = () => {
                 <Product onAdd={onAdd} cartItems={cartItems} item={item} key={item.title} />
             ))}
         </Container>
+        </FilterandProducts>
         <CartCompo onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
+        </MegaContainer>
         <Footer/>
         </div>
     )
