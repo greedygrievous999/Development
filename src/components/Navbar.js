@@ -62,7 +62,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>MOHAWK</Logo>
+          <Logo>MOHAWK RECORDS</Logo>
         </Center>
         <Right>
           <MenuItem>Sign In</MenuItem>
